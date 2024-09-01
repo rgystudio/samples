@@ -26,7 +26,7 @@ def fetch_test(transactions, client, market_dict, url, headers, cur, myDb):
                 buy_price = json.loads(data[i].to_json())['result'][j]['pure'] / 1E9
                 buy = True
                 break
-        for msgs in json.loads(data[i].to_json())['result']['messages']:
+        for msgs in json.loads(data[i].to_json())['result'][0]['messages']:
             sft = ""
             mark = ""
             if "OrderSummary" in msgs:
